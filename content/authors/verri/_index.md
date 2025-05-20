@@ -12,6 +12,8 @@ role: Researcher
 organizations:
 - name: Aeronautics Institute of Technology
   url: "http://www.ita.br/"
+- name: Federal University of São Paulo
+  url: "https://unifesp.br/campus/sjc/"
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include data science, machine learning, complex networks, and complex systems.
@@ -72,6 +74,6 @@ and the Ph.D. degree (Hons.) in computer science and computational mathematics
 from the University of São Paulo, in 2014 and 2018, respectively. He was
 a Visiting Scholar with the School of Electrical, Computer and Energy
 Engineering, Arizona State University, under the supervision of Prof. Y.-C.
-Lai, in 2016. He is currently an Assistant Professor with the Computer Science
-Division, Department of Computer Methods, ITA. His research interests include
-data science, machine learning, complex networks, and complex systems.
+Lai, in 2016. He is currently an Affiliate Professor with ITA and Unifesp. His
+research interests include data science, machine learning, complex networks,
+and complex systems.

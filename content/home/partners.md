@@ -4,8 +4,8 @@ headless: true  # This file represents a page section.
 active: true  # Activate this widget? true/false
 weight: 50
 
-title: Partners
-subtitle: Meet our Research Partners
+title: Parceiros
+subtitle: Conheça nossos parceiros
 
 content:
   page_type: partner

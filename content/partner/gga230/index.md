@@ -1,5 +1,5 @@
 ---
-title: "RESHAPE Lab: Research in Software: Human Aspects, Practices and Education"
+title: "Grupo GA230"
 type: partner
-external_link: https://www.reshapelab.site/
+external_link: https://grupoga230.com.br/
 ---

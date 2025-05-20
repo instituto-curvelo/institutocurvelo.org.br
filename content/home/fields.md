@@ -4,37 +4,40 @@ headless: true  # This file represents a page section.
 weight: 2
 
 # ... Put Your Section Options Here (title etc.) ...
-title: Research fields
+title: Áreas de Atuação
 
 # Showcase personal skills or business features.
 # Add/remove as many `feature` blocks below as you like.
 # For available icons, see: https://wowchemy.com/docs/page-builder/#icons
 feature:
-  - icon: landmark
-    icon_pack: fas
-    name: Computational Economics
-    description: 'Tradable Mobility Permit Market<br/>Agent Based Market Simulation'
   - icon: microchip
     icon_pack: fas
-    name: Embedded Systems
-    description: 'Reconfigurable computing<br/>Real-time systems<br/>Formal model-based design<br/>Domain-specific architectures'
+    name: Sistemas Embarcados
+    description: 'Sistemas de Tempo Real<br/>Sistemas de Controle<br/>Eletrônica Embarcada'
   - icon: database
     icon_pack: fas
-    name: High Performance Computing
-    description: 'Algorithms<br/>Optimization<br/>Parallel Computing'
+    name: Sistemas Computacionais
+    description: 'Banco de Dados<br/>Sistemas Distribuídos<br/>Sistemas de Tempo Real'
   - icon: robot
     icon_pack: fas
-    name: Mobile Robotics
-    description: 'Artificial Intelligence<br/>Control Systems<br/>Sensor Fusion'
+    name: Manufatura e Automação
+    description: 'Indústria 4.0<br/>Robótica<br/>Automação Industrial'
   - icon: cogs
     icon_pack: fas
-    name: Simulation
-    description: 'Agent-Based Modeling<br/>Complex Networks<br/>Complex Systems'
-  - icon: laptop
+    name: Análise de Dados
+    description: 'Aprendizado de Máquina<br/>Processamento de Sinais<br/>Visão Computacional'
+  - icon: users
     icon_pack: fas
-    name: Software Engineering
-    description: 'Certification<br/>Quality Assurance<br/>Requirements Engineering<br/>Information Systems'
+    name: Pesquisa e Desenvolvimento
+    description: 'Desenvolvimento de Produtos<br/>Prototipagem Rápida<br/>Inovação Tecnológica'
+  - icon: lightbulb
+    icon_pack: fas
+    name: Consultoria
+    description: 'Consultoria em Tecnologia<br/>Mentoria em Projetos<br/>Treinamentos e Capacitações'
 ---
 
-We study computer science fields related to the cyber-physical system of
-drones.
+Nossa missão do Instituto é prover soluções científicas e tecnológicas
+avançadas, agregando inovação e utilização eficiente de recursos, que
+possibilitem aos parceiros a concretização de seu potencial econômico e social,
+fomentando o crescimento pessoal e profissional dos colaboradores, valorizando
+seu potencial humano e promovendo um ambiente de desenvolvimento contínuo.

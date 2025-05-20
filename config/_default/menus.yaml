@@ -5,17 +5,17 @@
 
 main:
   - name: Notícias
-    url: noticia
+    url: post
     weight: 20
   - name: Projetos
-    url: projeto
+    url: project
     weight: 25
   - name: Pessoas
-    url: pessoas
+    url: people
     weight: 30
-  - name: Publications
-    url: publicacao
-    weight: 50
-  - name: Contact
-    url: contato
-    weight: 60
+#   - name: Publications
+#     url: publicacao
+#     weight: 50
+#   - name: Contact
+#     url: contato
+#     weight: 60

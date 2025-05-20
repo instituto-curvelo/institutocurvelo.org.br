@@ -6,7 +6,7 @@
 widget: hero  # See https://wowchemy.com/docs/page-builder/
 headless: true  # This file represents a page section.
 weight: 1  # Order that this section will appear.
-title: "DroneComp Research Group"
+title: "Sobre nós"
 subtitle: ""
 hero_media: 'hero.png'
 advanced:
@@ -17,20 +17,18 @@ advanced:
 #   Display link(s) by specifying a URL and label below. Icon is optional for `cta`.
 #   Remove a link/note by deleting a cta/note block.
 cta:
-  url: 'https://groups.google.com/g/drone-comp'
-  label: Join our mailing list
+  url: 'mailto:contato@institutocurvelo.org.br'
+  label: Contate-nos
   icon_pack: fas
   icon: envelope
-cta_alt:
-  url: 'https://discord.gg/eqAmvXUEA5'
-  label: or our discord channel
+# cta_alt:
+#   url: 'https://discord.gg/eqAmvXUEA5'
+#   label: or our discord channel
 ---
 
-Our research group conducts high-level research on the design and development
-of computer systems and computational methods for the next-generation air
-transportation system.
+Somos uma associação sem fins lucrativos que tem como objetivo
+a pesquisa básica e aplicada de caráter científico ou tecnológico, além do
+desenvolvimento de novos produtos, serviços ou processos inovadores.
 
-[{{< icon name="linkedin" pack="fab" >}}](https://www.linkedin.com/company/76928182/)
-[{{< icon name="facebook" pack="fab" >}}](https://www.facebook.com/drone.comp.7)
-[{{< icon name="youtube" pack="fab" >}}](https://www.youtube.com/channel/UC6g9n3EuVUNb19h8Oh9LynA)
-[{{< icon name="github" pack="fab" >}}](https://github.com/drone-comp)
+[{{< icon name="linkedin" pack="fab" >}}](https://www.linkedin.com/company/instituto-curvelo/)
+[{{< icon name="github" pack="fab" >}}](https://github.com/instituto-curvelo/)
