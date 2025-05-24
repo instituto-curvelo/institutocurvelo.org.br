@@ -17,7 +17,7 @@ feature:
   - icon: database
     icon_pack: fas
     name: Sistemas Computacionais
-    description: 'Banco de Dados<br/>Sistemas Distribuídos<br/>Sistemas de Tempo Real'
+    description: 'Banco de Dados<br/>Sistemas Distribuídos<br/>Big Data'
   - icon: robot
     icon_pack: fas
     name: Manufatura e Automação
@@ -36,7 +36,7 @@ feature:
     description: 'Consultoria em Tecnologia<br/>Mentoria em Projetos<br/>Treinamentos e Capacitações'
 ---
 
-Nossa missão do Instituto é prover soluções científicas e tecnológicas
+Nossa missão é prover soluções científicas e tecnológicas
 avançadas, agregando inovação e utilização eficiente de recursos, que
 possibilitem aos parceiros a concretização de seu potencial econômico e social,
 fomentando o crescimento pessoal e profissional dos colaboradores, valorizando

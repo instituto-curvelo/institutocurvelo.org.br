@@ -11,6 +11,6 @@ content:
   page_type: partner
 
 design:
-  columns: 2
-  view: 3
+  columns: 1
+  view: 2
 ---

@@ -26,9 +26,13 @@ cta:
 #   label: or our discord channel
 ---
 
-Somos uma associação sem fins lucrativos que tem como objetivo
-a pesquisa básica e aplicada de caráter científico ou tecnológico, além do
-desenvolvimento de novos produtos, serviços ou processos inovadores.
+Somos uma Instituição de Ciência, Tecnologia e Inovação (ICT), privada e sem
+fins lucrativos, mantida pelo [Grupo
+GA230](https://grupoga230.com.br/grupoga230/), com sede em Arujá, São Paulo.
+
+Ofertamos soluções tecnológicas e científicas avançadas, com foco em pesquisa,
+desenvolvimento e inovação, em diversos setores, como automobilístico,
+óleo e gás, mineração e transporte.
 
 [{{< icon name="linkedin" pack="fab" >}}](https://www.linkedin.com/company/instituto-curvelo/)
 [{{< icon name="github" pack="fab" >}}](https://github.com/instituto-curvelo/)
