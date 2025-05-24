@@ -26,7 +26,7 @@ interests:
 
 education:
   courses:
-  - course: PhD in Computer Science
+  - course: DSc in Computer Science
     institution: University of São Paulo
     year: 2018
   - course: BSc in Computer Science
@@ -69,8 +69,8 @@ user_groups:
 - Researchers
 ---
 
-Filipe A. N. Verri received the B.Sc. degree (Hons.) in computer science
-and the Ph.D. degree (Hons.) in computer science and computational mathematics
+Filipe A. N. Verri received the BSc degree (Hons.) in computer science
+and the DSc degree (Hons.) in computer science and computational mathematics
 from the University of São Paulo, in 2014 and 2018, respectively. He was
 a Visiting Scholar with the School of Electrical, Computer and Energy
 Engineering, Arizona State University, under the supervision of Prof. Y.-C.

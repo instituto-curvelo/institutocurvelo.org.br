@@ -9,12 +9,12 @@ headless: true
 # Order that this section appears on the page.
 weight: 68
 
-title: Meet the Team
+title: Conheça nosso time
 subtitle:
 
 content:
   user_groups:
-    - Researchers
+    - Pesquisadores
     - Students
     - Volunteers
     - Alumni

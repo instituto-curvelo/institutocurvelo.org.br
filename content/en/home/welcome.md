@@ -18,7 +18,7 @@ advanced:
 #   Remove a link/note by deleting a cta/note block.
 cta:
   url: 'mailto:contato@institutocurvelo.org.br'
-  label: Contate-nos
+  label: Contact us
   icon_pack: fas
   icon: envelope
 # cta_alt:

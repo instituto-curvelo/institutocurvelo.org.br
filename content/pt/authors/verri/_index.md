@@ -6,31 +6,31 @@ title: Filipe A. N. Verri
 superuser: false
 
 # Role/position
-role: Researcher
+role: Diretor Técnico-Científico
 
 # Organizations/Affiliations
 organizations:
-- name: Aeronautics Institute of Technology
+- name: Instituto Tecnológico de Aeronáutica
   url: "http://www.ita.br/"
-- name: Federal University of São Paulo
+- name: Universidade Federal de São Paulo
   url: "https://unifesp.br/campus/sjc/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include data science, machine learning, complex networks, and complex systems.
+bio: Meus interesses de pesquisa incluem ciência de dados, aprendizado de máquina, redes complexas e sistemas complexos.
 
 interests:
-- Data Science
-- Machine Learning
-- Complex Networks
-- Complex Systems
+- Ciência de Dados
+- Aprendizado de Máquina
+- Redes Complexas
+- Sistemas Complexos
 
 education:
   courses:
-  - course: PhD in Computer Science
-    institution: University of São Paulo
+  - course: Doutorado em Ciências de Computação
+    institution: Universidade de São Paulo
     year: 2018
-  - course: BSc in Computer Science
-    institution: University of São Paulo
+  - course: Bacharelado em Ciências de Computação
+    institution: Universidade de São Paulo
     year: 2014
 
 # Social/Academic Networking
@@ -66,14 +66,15 @@ highlight_name: true
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- Researchers
+- Pesquisadores
 ---
 
-Filipe A. N. Verri received the B.Sc. degree (Hons.) in computer science
-and the Ph.D. degree (Hons.) in computer science and computational mathematics
-from the University of São Paulo, in 2014 and 2018, respectively. He was
-a Visiting Scholar with the School of Electrical, Computer and Energy
-Engineering, Arizona State University, under the supervision of Prof. Y.-C.
-Lai, in 2016. He is currently an Affiliate Professor with ITA and Unifesp. His
-research interests include data science, machine learning, complex networks,
-and complex systems.
+Filipe formou-se, em primeiro lugar da turma, em Ciências de Computação pelo
+Instituto de Ciências Matemáticas e de Computação (ICMC) da Universidade de São
+Paulo (USP) em 2014, onde também obteve o título de Doutor em Ciências de
+Computação e Matemática Computacional em 2018, com a tese premiada entre as
+três melhores do ano. Filipe foi Pesquisador Visitante na Arizona State
+University, sob supervisão do Prof. Y.-C. Lai, em 2016. Atualmente, é Professor
+Afiliado no Instituto Tecnológico de Aeronáutica (ITA) e na Universidade
+Federal de São Paulo (Unifesp). Seus interesses de pesquisa incluem ciência de
+dados, aprendizado de máquina, redes complexas e sistemas complexos.

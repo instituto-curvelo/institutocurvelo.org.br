@@ -19,6 +19,14 @@ en:
       date_format: 'Jan 02, 2006'
       time_format: '3:04 PM'
       address_format: en-us
+  menus:
+    main:
+      - name: People
+        url: people
+        weight: 30
+      - name: Contact
+        url: contact
+        weight: 60
 
 # Uncomment the lines below to configure your website in a second language.
 #zh:

@@ -11,11 +11,11 @@ main:
 #     url: project
 #     weight: 25
   - name: Pessoas
-    url: people
+    url: pessoas
     weight: 30
 #   - name: Publications
 #     url: publicacao
 #     weight: 50
   - name: Contato
-    url: contact
+    url: contato
     weight: 60
