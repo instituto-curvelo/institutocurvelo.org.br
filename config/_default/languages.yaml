@@ -6,7 +6,19 @@
 pt:
   languageCode: pt-br
   # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
-  #contentDir: content/en
+  contentDir: content/pt
+
+en:
+  languageCode: en-us
+  contentDir: content/en
+  params:
+    footer:
+      copyright:
+        notice: '@ {year} Instituto Curvelo. This site is licensed under the {license}. All rights reserved.'
+    locale:
+      date_format: 'Jan 02, 2006'
+      time_format: '3:04 PM'
+      address_format: en-us
 
 # Uncomment the lines below to configure your website in a second language.
 #zh:
