@@ -1,5 +1,6 @@
 ---
 # Files in this folder represent a Widget Page
 type: widget_page
-title: Pessoas
+title: Contato
+slug: contato
 ---
