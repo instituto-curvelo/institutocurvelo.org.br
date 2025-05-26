@@ -46,7 +46,7 @@ header:
 footer:
   block: minimal
   copyright:
-    notice: '© {year} Instituto Curvelo. Este site é licenciado pela {license}. Todos direitos reservados.'
+    notice: '© {year} Instituto Curvelo. CNPJ 60.911.337/0001-82. Este site é licenciado pela {license}. Todos direitos reservados.'
     license:
       enable: true
       allow_derivatives: false
