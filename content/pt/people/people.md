@@ -14,12 +14,11 @@ subtitle:
 
 content:
   user_groups:
+    - Diretoria
     - Pesquisadores
-    - Students
-    - Volunteers
-    - Alumni
+    - Analistas
 design:
   show_interests: true
-  show_role: false
+  show_role: true
   show_social: true
 ---

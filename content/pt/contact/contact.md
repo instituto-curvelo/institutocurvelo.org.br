@@ -14,7 +14,7 @@ content:
     city: Arujá
     region: SP
     postcode: 07429-825
-    country: Brazil
+    country: Brasil
     country_code: BR
   coordinates:
     latitude: -23.415972225057224

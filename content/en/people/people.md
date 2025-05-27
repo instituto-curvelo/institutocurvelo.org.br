@@ -14,12 +14,11 @@ subtitle:
 
 content:
   user_groups:
+    - Board
     - Researchers
-    - Students
     - Volunteers
-    - Alumni
 design:
   show_interests: true
-  show_role: false
+  show_role: true
   show_social: true
 ---
