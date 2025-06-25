@@ -10,6 +10,12 @@ main:
 #   - name: Projetos
 #     url: project
 #     weight: 25
+  - name: CPDI
+    url: cpdi
+    weight: 20
+  - name: NIT
+    url: nit
+    weight: 20
   - name: Pessoas
     url: pessoas
     weight: 30

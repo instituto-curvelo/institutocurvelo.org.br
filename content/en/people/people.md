@@ -14,7 +14,7 @@ subtitle:
 
 content:
   user_groups:
-    - Board
+    - Board of Directors
     - Researchers
     - Volunteers
 design:

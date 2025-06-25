@@ -34,5 +34,5 @@ email: ""
 highlight_name: true
 
 user_groups:
-- Board
+- Board of Directors
 ---

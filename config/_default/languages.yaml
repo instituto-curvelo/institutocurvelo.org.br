@@ -21,6 +21,12 @@ en:
       address_format: en-us
   menus:
     main:
+      - name: R&DC
+        url: rndc
+        weight: 20
+      - name: IO
+        url: io
+        weight: 21
       - name: People
         url: people
         weight: 30
