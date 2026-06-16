@@ -58,5 +58,5 @@ export const partners: { name: string; logo: string }[] = [
   { name: "iRede", logo: "/partners/irede.png" },
   { name: "Lactec", logo: "/partners/lactec.png" },
   { name: "ICMC-USP", logo: "/partners/icmc-usp.png" },
-  { name: "GA230 Grupo", logo: "/partners/ga230.png" },
+  { name: "PIT", logo: "/partners/pit-logo.png" },
 ];

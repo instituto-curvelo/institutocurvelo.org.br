@@ -7,15 +7,15 @@ export function Container({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("mx-auto w-full max-w-[1280px] px-4 md:px-8", className)}
+      className={cn("mx-auto w-full max-w-[1200px] px-6", className)}
       {...props}
     />
   );
 }
 
 /**
- * Mono coordinate eyebrow — the signature field label.
- * `index` renders an ordinal (// 02 — LABEL) only when the content is a real sequence.
+ * Section eyebrow — uppercase accent label.
+ * `index` prepends an ordinal (only meaningful for true sequences).
  */
 export function FieldLabel({
   children,
@@ -28,13 +28,12 @@ export function FieldLabel({
 }) {
   return (
     <span className={cn("field-label inline-flex items-center gap-2", className)}>
-      <span aria-hidden className="text-teal-500">//</span>
       {index != null && (
-        <span className="tnum text-foreground">
-          {String(index).padStart(2, "0")}
-        </span>
+        <span className="tnum text-primary">{String(index).padStart(2, "0")}</span>
       )}
-      {index != null && <span aria-hidden>—</span>}
+      {index != null && (
+        <span aria-hidden className="h-3 w-px bg-current opacity-40" />
+      )}
       <span>{children}</span>
     </span>
   );
@@ -50,10 +49,7 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section
-      id={id}
-      className={cn("scroll-mt-20 py-14 md:py-24", className)}
-    >
+    <section id={id} className={cn("scroll-mt-20 py-14 md:py-24", className)}>
       {children}
     </section>
   );
@@ -65,23 +61,39 @@ export function SectionHeading({
   title,
   description,
   className,
+  tone = "light",
 }: {
   eyebrow?: React.ReactNode;
   index?: number;
   title: React.ReactNode;
   description?: React.ReactNode;
   className?: string;
+  /** "dark" inverts text for use on the deep-blue sections. */
+  tone?: "light" | "dark";
 }) {
   return (
     <div className={cn("max-w-3xl", className)}>
       {eyebrow && (
-        <FieldLabel index={index} className="mb-4">
+        <FieldLabel index={index} className={cn("mb-3", tone === "dark" && "!text-accent-soft")}>
           {eyebrow}
         </FieldLabel>
       )}
-      <h2 className="text-3xl font-semibold leading-tight md:text-4xl">{title}</h2>
+      <h2
+        className={cn(
+          "font-display text-4xl leading-none md:text-5xl",
+          tone === "dark" ? "text-white" : "text-foreground",
+        )}
+      >
+        {title}
+      </h2>
+      <div className="divider-accent mt-5" />
       {description && (
-        <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+        <p
+          className={cn(
+            "mt-5 text-lg leading-relaxed",
+            tone === "dark" ? "text-white/80" : "text-muted-foreground",
+          )}
+        >
           {description}
         </p>
       )}
@@ -89,7 +101,7 @@ export function SectionHeading({
   );
 }
 
-/** Tick-marked hairline divider. */
+/** Plain hairline divider. */
 export function TickRule({ className }: { className?: string }) {
   return <div className={cn("tick-rule", className)} aria-hidden />;
 }
@@ -105,9 +117,9 @@ export function MetricCell({
   className?: string;
 }) {
   return (
-    <div className={cn("rounded-md border border-border bg-card p-4", className)}>
+    <div className={cn("rounded-lg border border-border bg-card p-4", className)}>
       <div className="field-label mb-2">{label}</div>
-      <div className="font-display text-2xl font-semibold tnum text-foreground">
+      <div className="font-display text-3xl leading-none tnum text-foreground">
         {value}
       </div>
     </div>

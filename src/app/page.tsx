@@ -54,24 +54,22 @@ export default function HomePage() {
   return (
     <>
       {/* ---------- Hero ---------- */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="blueprint-grid absolute inset-0" aria-hidden />
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"
-          aria-hidden
-        />
-        <Container className="relative py-20 md:py-32">
+      <section className="hero-gradient relative overflow-hidden text-white">
+        <div className="grid-on-dark absolute inset-0" aria-hidden />
+        <div className="deco-circle -right-40 -top-40 size-[420px]" aria-hidden />
+        <Container className="relative py-28 md:py-36">
           <div className="max-w-3xl">
-            <FieldLabel className="animate-rise">Instituto Curvelo</FieldLabel>
-            <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] tracking-tight animate-rise md:text-7xl">
-              {t({ pt: "Tecnologia", en: "Technology" })}
-              <br />
-              <span className="text-teal-500">
+            <span className="field-label animate-rise !text-accent-soft">
+              Instituto Curvelo
+            </span>
+            <h1 className="mt-5 font-display text-6xl leading-none animate-rise md:text-8xl">
+              {t({ pt: "Tecnologia", en: "Technology" })}{" "}
+              <span className="text-accent-soft">
                 {t({ pt: "que inspira", en: "that inspires" })}
               </span>
             </h1>
             <p
-              className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground animate-rise"
+              className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80 animate-rise md:text-xl"
               style={{ animationDelay: "60ms" }}
             >
               {t({
@@ -83,13 +81,22 @@ export default function HomePage() {
               className="mt-9 flex flex-wrap gap-3 animate-rise"
               style={{ animationDelay: "120ms" }}
             >
-              <Button asChild size="lg">
+              <Button
+                asChild
+                size="lg"
+                className="border-transparent bg-white text-primary hover:bg-white/90"
+              >
                 <Link href={routes.solutions}>
                   {t({ pt: "Explore nossas soluções", en: "Explore our solutions" })}
                   <ArrowRight />
                 </Link>
               </Button>
-              <Button asChild variant="secondary" size="lg">
+              <Button
+                asChild
+                variant="secondary"
+                size="lg"
+                className="border-white text-white hover:bg-white/10"
+              >
                 <Link href={routes.courses}>
                   {t({ pt: "Ver cursos", en: "View courses" })}
                 </Link>
@@ -99,7 +106,7 @@ export default function HomePage() {
 
           {/* coordinate readout strip */}
           <div
-            className="mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-3 animate-rise"
+            className="mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/15 bg-white/10 md:grid-cols-3 animate-rise"
             style={{ animationDelay: "180ms" }}
           >
             {[
@@ -107,9 +114,9 @@ export default function HomePage() {
               { k: { pt: "Sede", en: "HQ" }, v: "Arujá · SP" },
               { k: { pt: "Mantenedor", en: "Maintainer" }, v: "Grupo GA230" },
             ].map((m) => (
-              <div key={m.v} className="bg-card p-4">
-                <div className="field-label mb-1.5">{t(m.k)}</div>
-                <div className="font-display text-lg font-semibold">{m.v}</div>
+              <div key={m.v} className="bg-[#063a5e] p-4">
+                <div className="field-label mb-1.5 !text-accent-soft">{t(m.k)}</div>
+                <div className="font-display text-2xl leading-none text-white">{m.v}</div>
               </div>
             ))}
           </div>
@@ -277,9 +284,10 @@ export default function HomePage() {
       </Section>
 
       {/* ---------- Partners ---------- */}
-      <Section className="border-t border-border bg-paper-100/50">
+      <Section className="bg-ink-900 text-white">
         <Container>
           <SectionHeading
+            tone="dark"
             eyebrow={t({ pt: "Parceiros", en: "Partners" })}
             title={t({ pt: "Nossos parceiros", en: "Our partners" })}
             description={t({
@@ -287,18 +295,18 @@ export default function HomePage() {
               en: "We work in collaboration with leading organizations to expand our impact and offer even more robust solutions.",
             })}
           />
-          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-4">
+          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 md:grid-cols-4">
             {partners.map((p) => (
               <div
                 key={p.name}
-                className="flex h-28 items-center justify-center bg-card p-6"
+                className="flex h-28 items-center justify-center bg-[#063a5e] p-6"
               >
                 <Image
                   src={p.logo}
                   alt={`${p.name} logo`}
                   width={140}
                   height={56}
-                  className="max-h-12 w-auto object-contain opacity-80 transition-opacity hover:opacity-100"
+                  className="max-h-12 w-auto object-contain opacity-90 transition-opacity hover:opacity-100"
                 />
               </div>
             ))}

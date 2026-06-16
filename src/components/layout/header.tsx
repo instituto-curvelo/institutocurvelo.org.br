@@ -25,11 +25,11 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b bg-background/85 backdrop-blur-sm transition-colors",
-        scrolled ? "border-border" : "border-transparent",
+        "sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md transition-shadow",
+        scrolled && "shadow-sm",
       )}
     >
-      <Container className="flex h-16 items-center justify-between">
+      <Container className="flex h-[72px] items-center justify-between">
         <Link href="/" className="flex items-center" aria-label="Instituto Curvelo">
           <Image
             src="/brand/logo-horizontal-light.svg"
@@ -47,7 +47,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="rounded-sm px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-surface hover:text-primary"
             >
               {t(item.label)}
             </Link>

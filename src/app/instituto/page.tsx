@@ -101,20 +101,17 @@ export default function InstitutePage() {
   return (
     <>
       {/* ---------- Hero ---------- */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="blueprint-grid absolute inset-0" aria-hidden />
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"
-          aria-hidden
-        />
-        <Container className="relative py-20 md:py-32">
+      <section className="hero-gradient relative overflow-hidden text-white">
+        <div className="grid-on-dark absolute inset-0" aria-hidden />
+        <div className="deco-circle -right-40 -top-40 size-[420px]" aria-hidden />
+        <Container className="relative py-24 md:py-32">
           <div className="max-w-3xl">
-            <FieldLabel className="animate-rise">Instituto Curvelo</FieldLabel>
-            <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] tracking-tight animate-rise md:text-7xl">
+            <FieldLabel className="animate-rise !text-accent-soft">Instituto Curvelo</FieldLabel>
+            <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] tracking-tight text-white animate-rise md:text-7xl">
               {t({ pt: "O Instituto", en: "The Institute" })}
             </h1>
             <p
-              className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground animate-rise"
+              className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80 animate-rise"
               style={{ animationDelay: "60ms" }}
             >
               {t({

@@ -340,20 +340,16 @@ export default function LLMCoursePage() {
       </nav>
 
       {/* ---------- Hero ---------- */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="blueprint-grid absolute inset-0" aria-hidden />
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"
-          aria-hidden
-        />
-        <Container className="relative py-20 md:py-28">
+      <section className="hero-gradient relative overflow-hidden text-white">
+        <div className="grid-on-dark absolute inset-0" aria-hidden />
+        <Container className="relative py-24 md:py-32">
           <div className="max-w-3xl">
-            <FieldLabel className="animate-rise">{t({ pt: "Curso", en: "Course" })}</FieldLabel>
-            <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] tracking-tight animate-rise md:text-6xl">
+            <FieldLabel className="animate-rise !text-accent-soft">{t({ pt: "Curso", en: "Course" })}</FieldLabel>
+            <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] tracking-tight text-white animate-rise md:text-6xl">
               {t({ pt: "LLMs Corporativos", en: "Corporate LLMs" })}
             </h1>
             <p
-              className="mt-5 text-xl font-medium text-foreground animate-rise"
+              className="mt-5 text-xl font-medium text-white animate-rise"
               style={{ animationDelay: "60ms" }}
             >
               {t({
@@ -362,7 +358,7 @@ export default function LLMCoursePage() {
               })}
             </p>
             <p
-              className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground animate-rise"
+              className="mt-4 max-w-2xl text-lg leading-relaxed text-white/80 animate-rise"
               style={{ animationDelay: "120ms" }}
             >
               {t({
@@ -374,7 +370,11 @@ export default function LLMCoursePage() {
               className="mt-9 flex flex-wrap items-center gap-4 animate-rise"
               style={{ animationDelay: "180ms" }}
             >
-              <Button size="lg" onClick={openWhatsApp}>
+              <Button
+                size="lg"
+                onClick={openWhatsApp}
+                className="border-transparent bg-white text-primary hover:bg-white/90"
+              >
                 {t({ pt: "SOLICITE PROPOSTA", en: "REQUEST PROPOSAL" })}
                 <ArrowRight />
               </Button>
@@ -384,18 +384,18 @@ export default function LLMCoursePage() {
 
           {/* metric strip */}
           <div
-            className="mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-4 animate-rise"
+            className="mt-16 grid max-w-3xl grid-cols-2 gap-px overflow-hidden rounded-md border border-white/15 bg-white/10 md:grid-cols-4 animate-rise"
             style={{ animationDelay: "240ms" }}
           >
             {metrics.map((m, i) => {
               const Icon = m.icon;
               return (
-                <div key={i} className="bg-card p-4">
-                  <div className="field-label mb-1.5 inline-flex items-center gap-1.5">
+                <div key={i} className="bg-[#063a5e] p-4">
+                  <div className="field-label !text-accent-soft mb-1.5 inline-flex items-center gap-1.5">
                     <Icon className="size-3.5 text-teal-500" />
                     {t(m.k)}
                   </div>
-                  <div className="font-display text-base font-semibold tnum">{t(m.v)}</div>
+                  <div className="font-display text-base font-semibold tnum text-white">{t(m.v)}</div>
                 </div>
               );
             })}

@@ -1,99 +1,92 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Instituto Curvelo — Design System (technical research-lab)
+   Instituto Curvelo — Design System (institutional / Azul Curvelo)
    Source of truth: DESIGN_SYSTEM.md
    ============================================================ */
 
 @theme {
-  /* --- Brand teal ramp --- */
-  --color-teal-100: hsl(185 55% 88%);
-  --color-teal-300: hsl(185 65% 62%);
-  --color-teal-400: hsl(185 72% 48%);
-  --color-teal-500: hsl(185 84% 38%);
-  --color-teal-600: hsl(186 86% 32%);
-  --color-teal-700: hsl(186 84% 25%);
+  /* --- Brand blue ("Azul Curvelo") --- */
+  --color-primary-base: #042b45;
+  --color-primary-hover: #063a5e;
+  --color-primary-deep: #021d2e;
 
-  /* --- Neutrals: teal-tinted slate ink / paper --- */
-  --color-ink-950: hsl(170 31% 5%);
-  --color-ink-900: hsl(192 38% 9%);
-  --color-ink-800: hsl(193 32% 13%);
-  --color-ink-700: hsl(194 33% 19%);
-  --color-ink-500: hsl(194 25% 32%);
-  --color-ink-300: hsl(194 14% 62%);
-  --color-paper-200: hsl(180 17% 88%);
-  --color-paper-100: hsl(180 22% 93%);
-  --color-paper-50: hsl(180 18% 97%);
-  --color-paper-0: hsl(0 0% 100%);
+  /* --- Accent blue (links, secondary CTAs) --- */
+  --color-accent: #1a6fa8;
+  --color-accent-hover: #135a8a;
+  --color-accent-soft: #7aa8c8;
 
-  /* --- Signal palette (data & state only) --- */
-  --color-signal-amber: #f2a100;
-  --color-signal-coral: #fb5779;
-  --color-signal-violet: #7c6cf0;
-  --color-signal-success: #1fb87a;
-  --color-signal-error: #e5484d;
+  /* --- Legacy token names remapped to the blue palette ---
+     (kept so existing class references resolve to the new identity) */
+  --color-teal-100: #e6eef3;
+  --color-teal-300: #7aa8c8;
+  --color-teal-400: #1a6fa8;
+  --color-teal-500: #1a6fa8;
+  --color-teal-600: #135a8a;
+  --color-teal-700: #063a5e;
+
+  --color-ink-950: #021d2e;
+  --color-ink-900: #042b45;
+  --color-ink-800: #063a5e;
+  --color-ink-700: #0a4a78;
+  --color-ink-500: #3a5568;
+  --color-ink-300: #9fb3c0;
+  --color-paper-200: #dce4eb;
+  --color-paper-100: #eef3f7;
+  --color-paper-50: #f4f7fa;
+  --color-paper-0: #ffffff;
+
+  /* --- Surfaces --- */
+  --color-surface: #e8eef3;
+  --color-surface-alt: #f4f7fa;
+
+  /* --- Signal / state --- */
+  --color-signal-amber: #b07a00;
+  --color-signal-coral: #b02020;
+  --color-signal-violet: #1a6fa8;
+  --color-signal-success: #1d7a4a;
+  --color-signal-error: #b02020;
 
   /* --- Type roles --- */
-  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
 
   /* --- Radius --- */
-  --radius: 0.375rem;
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 4px);
+  --radius: 0.5rem;                       /* 8px — buttons, inputs */
+  --radius-sm: 0.25rem;                   /* 4px — badges */
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;                   /* 12px — cards */
+  --radius-xl: 1.25rem;                   /* 20px — featured cards */
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 3px rgba(4,43,69,0.08), 0 1px 2px rgba(4,43,69,0.06);
+  --shadow-md: 0 4px 12px rgba(4,43,69,0.10), 0 2px 4px rgba(4,43,69,0.06);
+  --shadow-lg: 0 10px 30px rgba(4,43,69,0.12), 0 4px 8px rgba(4,43,69,0.08);
 }
 
 /* --- Semantic tokens (light) --- */
 :root {
-  --background: hsl(180 18% 97%);
-  --foreground: hsl(192 38% 9%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(192 38% 9%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(192 38% 9%);
-  --muted: hsl(180 22% 93%);
-  --muted-foreground: hsl(194 25% 32%);
-  --border: hsl(180 17% 88%);
-  --input: hsl(180 17% 88%);
-  --primary: hsl(185 84% 38%);
-  --primary-foreground: hsl(0 0% 100%);
-  --primary-glow: hsl(185 72% 48%);
-  --secondary: hsl(194 33% 19%);
-  --secondary-foreground: hsl(180 18% 97%);
-  --accent: hsl(185 55% 88%);
-  --accent-foreground: hsl(186 84% 25%);
-  --ring: hsl(185 72% 48%);
-  --destructive: hsl(0 75% 60%);
-  --destructive-foreground: hsl(0 0% 100%);
-
-  /* signature grid color */
-  --grid-line: hsl(185 84% 38% / 0.06);
-}
-
-.dark {
-  --background: hsl(192 38% 9%);
-  --foreground: hsl(180 18% 97%);
-  --card: hsl(193 32% 13%);
-  --card-foreground: hsl(180 18% 97%);
-  --popover: hsl(193 32% 13%);
-  --popover-foreground: hsl(180 18% 97%);
-  --muted: hsl(194 33% 19%);
-  --muted-foreground: hsl(194 14% 62%);
-  --border: hsl(194 33% 19%);
-  --input: hsl(194 33% 19%);
-  --primary: hsl(185 72% 48%);
-  --primary-foreground: hsl(192 38% 9%);
-  --primary-glow: hsl(185 65% 62%);
-  --secondary: hsl(194 33% 19%);
-  --secondary-foreground: hsl(180 18% 97%);
-  --accent: hsl(194 33% 19%);
-  --accent-foreground: hsl(185 65% 62%);
-  --ring: hsl(185 65% 62%);
-  --destructive: hsl(0 62% 45%);
-  --destructive-foreground: hsl(0 0% 100%);
-  --grid-line: hsl(185 72% 48% / 0.08);
+  --background: #ffffff;
+  --foreground: #042b45;
+  --card: #ffffff;
+  --card-foreground: #042b45;
+  --popover: #ffffff;
+  --popover-foreground: #042b45;
+  --muted: #f4f7fa;
+  --muted-foreground: #3a5568;
+  --border: #dce4eb;
+  --input: #dce4eb;
+  --primary: #042b45;
+  --primary-foreground: #ffffff;
+  --primary-glow: #1a6fa8;
+  --secondary: #063a5e;
+  --secondary-foreground: #ffffff;
+  --accent: #e6eef3;
+  --accent-foreground: #042b45;
+  --ring: #1a6fa8;
+  --destructive: #b02020;
+  --destructive-foreground: #ffffff;
 }
 
 /* --- Map semantic tokens to Tailwind color utilities --- */
@@ -113,8 +106,6 @@
   --color-primary-glow: var(--primary-glow);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
   --color-ring: var(--ring);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
@@ -133,20 +124,35 @@
     background: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
-  /* Display type defaults: tight, geometric */
+  /* Headings default to Barlow; display (Bebas) is opt-in via .font-display */
   h1, h2, h3, h4 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
-    text-wrap: balance;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
   }
 
   ::selection {
-    background: var(--color-teal-500);
+    background: var(--color-accent);
     color: white;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -160,51 +166,82 @@
 }
 
 /* ============================================================
-   Signature: the measurement grid
+   Eyebrow / section label
    ============================================================ */
-
-/* Field label — mono coordinate eyebrow */
 .field-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted-foreground);
+  color: var(--color-accent);
 }
 
-/* Ambient blueprint grid (hero only) */
-.blueprint-grid {
-  background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 48px 48px;
+/* Short accent divider under headings */
+.divider-accent {
+  width: 64px;
+  height: 4px;
+  background: var(--color-primary-base);
+  border-radius: 2px;
 }
 
-/* Tick-marked hairline divider */
+/* Plain hairline divider (was tick rule) */
 .tick-rule {
-  position: relative;
   height: 1px;
   background: var(--border);
 }
-.tick-rule::before,
-.tick-rule::after {
-  content: "";
-  position: absolute;
-  top: -3px;
-  width: 1px;
-  height: 7px;
-  background: var(--muted-foreground);
-  opacity: 0.35;
-}
-.tick-rule::before { left: 0; }
-.tick-rule::after { right: 0; }
-
-/* tabular figures helper */
-.tnum { font-variant-numeric: tabular-nums; }
 
 /* ============================================================
-   Motion: one orchestrated hero entrance
+   Decorative
+   ============================================================ */
+.hero-gradient {
+  background: linear-gradient(135deg, #042b45 0%, #063a5e 60%, #0a4a78 100%);
+}
+
+/* Subtle grid (light surfaces) */
+.blueprint-grid,
+.bg-grid {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.5;
+}
+
+/* Subtle grid on dark surfaces */
+.grid-on-dark {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 40px solid rgba(255,255,255,0.05);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--color-primary-base);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  font-weight: 700;
+  z-index: 9999;
+}
+.skip-link:focus { top: 0; }
+
+/* ============================================================
+   Motion
    ============================================================ */
 @keyframes ds-rise {
   from { opacity: 0; transform: translateY(8px); }

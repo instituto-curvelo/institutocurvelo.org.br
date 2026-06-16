@@ -4,20 +4,22 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-semibold transition-[background,transform,color] duration-200 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        primary: "bg-primary text-primary-foreground hover:bg-teal-700",
+        primary:
+          "border-2 border-transparent bg-primary text-primary-foreground hover:bg-secondary",
         secondary:
-          "border border-border bg-transparent text-foreground hover:bg-muted",
-        ghost: "text-foreground hover:bg-muted",
-        link: "font-mono text-sm text-primary hover:text-teal-700 underline-offset-4 hover:underline px-0",
+          "border-2 border-primary bg-transparent text-primary hover:bg-surface",
+        ghost:
+          "text-accent hover:bg-surface",
+        link: "text-accent hover:text-accent-hover underline underline-offset-[3px] px-0",
       },
       size: {
-        sm: "h-9 px-3 text-sm",
-        md: "h-11 px-5 text-sm",
-        lg: "h-12 px-7 text-base",
+        sm: "h-10 px-5 text-[13px]",
+        md: "h-12 px-7 text-[15px]",
+        lg: "h-[58px] px-9 text-[17px]",
       },
     },
     defaultVariants: { variant: "primary", size: "md" },

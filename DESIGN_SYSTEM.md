@@ -1,283 +1,624 @@
-# Instituto Curvelo — Design System
+# DESIGN SYSTEM WEB — Instituto Curvelo
 
-> **Direction:** Technical research-lab. Precise, grid-forward, instrument-like. Engineering and AI/data depth made legible, not decorated.
->
-> **Status:** v0.1 — canonical specification. This document is the source of truth. Code (`index.css`, `tailwind.config.ts`, components) is downstream of it.
+> Guia de identidade visual para o website institucional
 
----
+-----
 
-## 0. How to use this document
+## 1. PRINCÍPIOS
 
-This file is written to be **fed to Claude** (Claude Design / Claude Code) as the brief for any new screen, component, or page. When prompting:
+O site do Instituto Curvelo deve transmitir **autoridade científica com acessibilidade**. Não é um site de startup, nem de agência — é de uma ICT privada que conecta ciência e mercado. O design deve refletir isso: sólido, limpo, confiável, sem excessos decorativos.
 
-- Paste or reference this file, then describe the *content* and the *single job* of the screen.
-- Hold Claude to the **tokens** (Section 4–7) and the **do/don't** rules (Section 9). If a choice isn't covered here, it should be derived from the principles (Section 2), not invented from defaults.
-- The **signature** (Section 8) is the one place to spend boldness. Everything else stays quiet.
+**Pilares visuais:**
 
-Two failure modes to call out explicitly when prompting:
-1. **Default drift** — Inter everywhere, one teal button, soft drop shadows, centered hero with a big gradient number. Reject these.
-2. **Acid-lab cliché** — pure black + neon green. This direction is teal-anchored and measured, not a hacker terminal.
+- **Seriedade sem frieza** — azul escuro como base, branco como respiro
+- **Clareza antes de estética** — hierarquia de conteúdo sempre priorizada
+- **Ciência visível** — elementos gráficos que remetem a diagramas e estruturas
+- **Acessibilidade real** — contraste mínimo WCAG AA em todos os textos
 
----
+-----
 
-## 1. Subject & audience
+## 2. CORES
 
-- **Who:** Instituto Curvelo Innovation Hub — a Brazilian institute doing applied AI / data-science research, technical education (LLM and data-science courses), and consulting/solutions, plus formal technical notes (NIT).
-- **Audience:** prospective students, partner institutions, and clients evaluating technical credibility. They need to trust depth fast.
-- **The page's job, always:** demonstrate rigor and capability, then route the visitor to the right next step (a course, a solution, contact).
-- **Languages:** Portuguese (primary) and English. Every layout must survive PT strings, which run ~15–25% longer than EN. Never hard-fit text to a fixed pixel width.
-
----
-
-## 2. Brand principles
-
-1. **Show the instrument, not the brochure.** Lead with the most characteristic real thing — a metric, a diagram, a model output, a live demo — rendered precisely. Avoid stock-photo heroes and abstract gradient blobs.
-2. **Structure encodes meaning.** Numbering, eyebrows, and rules are used only when the content is genuinely ordered or measured. A monospace label is a coordinate, not decoration.
-3. **Quiet surface, loud data.** Backgrounds, cards, and chrome are restrained and neutral. Color and emphasis are spent on the data and the one primary action per view.
-4. **Precision over polish.** Hairline borders, tight alignment to a grid, and exact spacing read as competence. Heavy shadows and blur read as marketing.
-5. **Legible bilingually.** The system works identically in PT and EN. Layouts flex; they never clip.
-
----
-
-## 3. Voice & copy
-
-- **Register:** plain, technical, confident. No hype adjectives ("revolutionary", "cutting-edge"). State capability concretely.
-- **Active voice, sentence case.** Buttons name the action and keep that name through the flow: `Inscrever-se` → toast `Inscrição enviada`.
-- **Labels name what the user controls,** not the system internals.
-- **Errors are directional:** what happened + how to fix it, in the interface's voice. Empty states invite an action.
-- **Numbers are first-class.** Prefer "12 turmas, 340 alunos" over "muitos alunos". Set figures in mono (Section 5).
-
----
-
-## 4. Color
-
-Teal is the one brand constant. Everything else is a neutral ink/paper ramp plus a **signal palette** reserved for data, charts, and states. Do not introduce new hues outside this set.
-
-### 4.1 Neutrals — teal-tinted slate (the surface system)
-
-| Token        | Hex       | HSL                | Use                                  |
-|--------------|-----------|--------------------|--------------------------------------|
-| `ink-950`    | `#08110F` | `170 31% 5%`       | Dark-mode background, deepest        |
-| `ink-900`    | `#0E1A1F` | `192 38% 9%`       | Dark surface / footer                |
-| `ink-800`    | `#16262C` | `193 32% 13%`      | Dark card                            |
-| `ink-700`    | `#213A42` | `194 33% 19%`      | Dark border / raised                 |
-| `ink-500`    | `#3E5C66` | `194 25% 32%`      | Muted text on dark                   |
-| `ink-300`    | `#90A6AD` | `194 14% 62%`      | Secondary text                       |
-| `paper-200`  | `#DCE6E6` | `180 17% 88%`      | Border / divider (light)             |
-| `paper-100`  | `#EAF1F1` | `180 22% 93%`      | Muted surface (light)                |
-| `paper-50`   | `#F5F8F8` | `180 18% 97%`      | Light-mode background                |
-| `paper-0`    | `#FFFFFF` | `0 0% 100%`        | Card (light)                         |
-
-### 4.2 Brand teal ramp
-
-| Token        | Hex       | HSL              | Use                          |
-|--------------|-----------|------------------|------------------------------|
-| `teal-700`   | `#0A6B75` | `186 84% 25%`    | Hover / pressed primary      |
-| `teal-600`   | `#0B8A96` | `186 86% 32%`    | —                            |
-| `teal-500`   | `#0FA3B1` | `185 84% 38%`    | **Primary** (brand)          |
-| `teal-400`   | `#22C2D0` | `185 72% 48%`    | Primary glow / focus ring    |
-| `teal-300`   | `#5CD6E0` | `185 65% 62%`    | Accent on dark               |
-| `teal-100`   | `#CFEEF1` | `185 55% 88%`    | Tint / subtle accent fill    |
-
-> Migration note: current `--primary` is `188 85% 35%`. Shift to `185 84% 38%` (`teal-500`) — marginally brighter and bluer, reads cleaner against the new neutrals. Backwards-compatible in feel.
-
-### 4.3 Signal palette (data & state only — never chrome)
-
-| Token            | Hex       | Use                                         |
-|------------------|-----------|---------------------------------------------|
-| `signal-amber`   | `#F2A100` | Highlight, warning, "in progress"           |
-| `signal-coral`   | `#FB5779` | Alert, destructive accent, contrast series  |
-| `signal-violet`  | `#7C6CF0` | Secondary data series                       |
-| `signal-success` | `#1FB87A` | Positive state, confirmation                |
-| `signal-error`   | `#E5484D` | Destructive / error                         |
-
-Chart series order: `teal-500 → signal-violet → signal-amber → signal-coral → ink-500`.
-
-### 4.4 Semantic mapping (CSS variables)
-
-Keep the existing `hsl(var(--token))` convention so Tailwind/shadcn keep working. Replace the values:
+### Paleta principal
 
 ```css
-:root {
-  --background: 180 18% 97%;      /* paper-50  */
-  --foreground: 192 38% 9%;       /* ink-900   */
-  --card: 0 0% 100%;              /* paper-0   */
-  --card-foreground: 192 38% 9%;
-  --muted: 180 22% 93%;           /* paper-100 */
-  --muted-foreground: 194 25% 32%;/* ink-500   */
-  --border: 180 17% 88%;          /* paper-200 */
-  --input: 180 17% 88%;
-  --primary: 185 84% 38%;         /* teal-500  */
-  --primary-foreground: 0 0% 100%;
-  --primary-glow: 185 72% 48%;    /* teal-400  */
-  --secondary: 194 33% 19%;       /* ink-700   */
-  --secondary-foreground: 180 18% 97%;
-  --accent: 185 55% 88%;          /* teal-100  */
-  --accent-foreground: 186 84% 25%;
-  --ring: 185 72% 48%;            /* teal-400  */
-  --destructive: 0 75% 60%;       /* signal-error */
-  --destructive-foreground: 0 0% 100%;
-  --radius: 0.375rem;             /* see 7.1 — tightened from 0.75rem */
+--color-primary:       #042b45;  /* Azul Curvelo — base de tudo */
+--color-white:         #ffffff;  /* Fundo principal */
+--color-background:    #f4f7fa;  /* Fundo de seções alternadas */
+--color-surface:       #e8eef3;  /* Cards, inputs, áreas elevadas */
+```
+
+### Variações do primário
+
+```css
+--color-primary-90:    rgba(4,43,69,0.90);
+--color-primary-70:    rgba(4,43,69,0.70);
+--color-primary-50:    rgba(4,43,69,0.50);
+--color-primary-30:    rgba(4,43,69,0.30);
+--color-primary-10:    rgba(4,43,69,0.10);
+--color-primary-05:    rgba(4,43,69,0.05);
+```
+
+### Cores de estado e acento
+
+```css
+--color-accent:        #1a6fa8;  /* Azul claro — links, CTAs secundários */
+--color-accent-hover:  #135a8a;  /* Hover de links */
+--color-success:       #1d7a4a;  /* Confirmações, badges positivos */
+--color-warning:       #b07a00;  /* Avisos */
+--color-error:         #b02020;  /* Erros de formulário */
+--color-border:        #dce4eb;  /* Bordas de cards e inputs */
+--color-border-strong: #b0bec8;  /* Bordas com mais peso */
+```
+
+### Texto
+
+```css
+--color-text-primary:   #042b45;  /* Corpo e títulos */
+--color-text-secondary: #3a5568;  /* Subtextos, descrições */
+--color-text-muted:     #6b8699;  /* Metadados, timestamps */
+--color-text-inverse:   #ffffff;  /* Texto sobre fundo escuro */
+```
+
+-----
+
+## 3. TIPOGRAFIA
+
+### Fontes
+
+```css
+/* Display — títulos grandes e de impacto */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue');
+--font-display: 'Bebas Neue', sans-serif;
+
+/* Body — leitura e interface */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700');
+--font-body: 'Barlow', sans-serif;
+```
+
+> **Nota:** Playfair Display e DM Sans são reservadas para materiais de marketing (carrosséis agro). No website, usar apenas Bebas Neue + Barlow para consistência e performance.
+
+-----
+
+### Escala tipográfica
+
+```css
+/* Display */
+--text-display-xl:  clamp(56px, 6vw, 96px);   /* Hero principal */
+--text-display-lg:  clamp(40px, 5vw, 72px);   /* Títulos de seção */
+--text-display-md:  clamp(28px, 3.5vw, 48px); /* Subtítulos de seção */
+
+/* Headings (Barlow) */
+--text-h1: clamp(28px, 3vw, 40px);  /* Peso 700 */
+--text-h2: clamp(22px, 2.5vw, 32px); /* Peso 700 */
+--text-h3: clamp(18px, 2vw, 24px);   /* Peso 600 */
+--text-h4: clamp(16px, 1.5vw, 20px); /* Peso 600 */
+
+/* Body */
+--text-body-lg:  18px;  /* Lead / intro paragraphs — Peso 400 */
+--text-body-md:  16px;  /* Corpo padrão — Peso 400 */
+--text-body-sm:  14px;  /* Legendas, notas — Peso 400 */
+
+/* UI */
+--text-label:    12px;  /* Tags, badges, labels — Peso 700 · letter-spacing 2px · uppercase */
+--text-caption:  13px;  /* Metadados, timestamps */
+--text-button:   15px;  /* Botões — Peso 600 */
+```
+
+### Line-height
+
+```css
+--leading-tight:   1.1;  /* Títulos display */
+--leading-snug:    1.3;  /* Headings */
+--leading-normal:  1.6;  /* Corpo */
+--leading-relaxed: 1.75; /* Lead / intro */
+```
+
+### Letter-spacing
+
+```css
+--tracking-tight:  -0.02em; /* Títulos display grandes */
+--tracking-normal:  0;
+--tracking-wide:    0.05em; /* Labels e tags uppercase */
+--tracking-wider:   0.1em;  /* Badges e eyebrows */
+```
+
+-----
+
+## 4. ESPAÇAMENTO
+
+Sistema em base 8px.
+
+```css
+--space-1:   4px;
+--space-2:   8px;
+--space-3:  12px;
+--space-4:  16px;
+--space-5:  20px;
+--space-6:  24px;
+--space-8:  32px;
+--space-10: 40px;
+--space-12: 48px;
+--space-16: 64px;
+--space-20: 80px;
+--space-24: 96px;
+--space-32: 128px;
+```
+
+### Padding de seções
+
+```css
+/* Seção padrão */
+padding: var(--space-24) 0;
+
+/* Seção hero */
+padding: var(--space-32) 0;
+
+/* Seção compacta */
+padding: var(--space-16) 0;
+```
+
+-----
+
+## 5. LAYOUT E GRID
+
+### Container
+
+```css
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6); /* 24px lateral */
 }
 
-.dark {
-  --background: 192 38% 9%;       /* ink-900 */
-  --foreground: 180 18% 97%;
-  --card: 193 32% 13%;            /* ink-800 */
-  --card-foreground: 180 18% 97%;
-  --muted: 194 33% 19%;           /* ink-700 */
-  --muted-foreground: 194 14% 62%;/* ink-300 */
-  --border: 194 33% 19%;
-  --primary: 185 72% 48%;         /* teal-400 reads better on dark */
-  --primary-foreground: 192 38% 9%;
-  --accent: 194 33% 19%;
-  --accent-foreground: 185 65% 62%;
-  --ring: 185 65% 62%;
+/* Variantes */
+.container-narrow { max-width: 800px; }  /* Artigos, textos longos */
+.container-wide   { max-width: 1400px; } /* Seções full-width */
+```
+
+### Grid principal
+
+```css
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-8); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6); }
+
+/* Assimétrico — conteúdo + sidebar */
+.grid-content { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-12); }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4, .grid-content {
+    grid-template-columns: 1fr;
+  }
 }
 ```
 
----
+### Breakpoints
 
-## 5. Typography
+```css
+--bp-sm:  480px;
+--bp-md:  768px;
+--bp-lg: 1024px;
+--bp-xl: 1280px;
+```
 
-Three roles, chosen deliberately for a research-lab read. All available on Google Fonts (free, self-hostable).
+-----
 
-| Role            | Family            | Why                                                            |
-|-----------------|-------------------|----------------------------------------------------------------|
-| **Display / headings** | **Space Grotesk** | Tight, geometric, slightly mechanical. Carries personality.    |
-| **Body / UI**   | **IBM Plex Sans**  | Engineering provenance, warmer than Inter, excellent in PT.     |
-| **Data / labels / code** | **IBM Plex Mono** | Coordinates, figures, eyebrows, code. The "instrument" voice.   |
+## 6. BORDAS E RAIOS
 
-> Why not Inter: it's the default everyone reaches for; IBM Plex Sans pairs natively with Plex Mono and signals the lab. Why not a serif: this direction is structural, not editorial.
+```css
+--radius-sm:   4px;   /* Badges, tags pequenas */
+--radius-md:   8px;   /* Botões, inputs */
+--radius-lg:  12px;   /* Cards */
+--radius-xl:  20px;   /* Cards de destaque */
+--radius-full: 9999px; /* Pills, avatares */
 
-### 5.1 Type scale (1.250 — major third, 16px base)
+--border-width:        1px;
+--border-color:        var(--color-border);
+--border-color-strong: var(--color-border-strong);
+```
 
-| Step    | Size / line-height | Family        | Weight | Tracking | Use                          |
-|---------|--------------------|---------------|--------|----------|------------------------------|
-| `display`| 3.815rem / 1.05   | Space Grotesk | 700    | -0.02em  | Hero headline                |
-| `h1`    | 3.052rem / 1.10    | Space Grotesk | 700    | -0.02em  | Page title                   |
-| `h2`    | 2.441rem / 1.15    | Space Grotesk | 600    | -0.01em  | Section title                |
-| `h3`    | 1.953rem / 1.20    | Space Grotesk | 600    | -0.01em  | Subsection                   |
-| `h4`    | 1.563rem / 1.25    | Space Grotesk | 500    | normal   | Card title                   |
-| `body-lg`| 1.25rem / 1.55    | IBM Plex Sans | 400    | normal   | Lead paragraph               |
-| `body`  | 1rem / 1.6         | IBM Plex Sans | 400    | normal   | Default text                 |
-| `body-sm`| 0.875rem / 1.55   | IBM Plex Sans | 400    | normal   | Secondary                    |
-| `label` | 0.75rem / 1.4      | IBM Plex Mono | 500    | 0.08em UPPERCASE | Eyebrows, field labels, coordinates |
-| `data`  | varies            | IBM Plex Mono | 500    | normal   | Figures, metrics, tabular nums |
+-----
 
-### 5.2 Rules
+## 7. SOMBRAS
 
-- **Mono is for machine-readable content:** numbers, dates, IDs, eyebrows, code, axis labels. Never set running prose in mono.
-- Use `font-variant-numeric: tabular-nums` for any column or comparison of figures.
-- Headings: tight tracking (negative) at large sizes; never letterspace lowercase body.
-- One display-weight headline per viewport. Don't stack two `display`/`h1` sizes.
+```css
+--shadow-sm:  0 1px 3px rgba(4,43,69,0.08), 0 1px 2px rgba(4,43,69,0.06);
+--shadow-md:  0 4px 12px rgba(4,43,69,0.10), 0 2px 4px rgba(4,43,69,0.06);
+--shadow-lg:  0 10px 30px rgba(4,43,69,0.12), 0 4px 8px rgba(4,43,69,0.08);
+--shadow-xl:  0 20px 50px rgba(4,43,69,0.15), 0 8px 16px rgba(4,43,69,0.10);
+```
 
----
+-----
 
-## 6. Layout & grid
+## 8. COMPONENTES
 
-- **Container:** max `1280px`, `2rem` gutter (`1rem` on mobile). Keep the existing centered container.
-- **Grid:** 12-column, `24px` gutter. Content blocks snap to columns; asymmetric splits (e.g. 5/7, 4/8) are preferred over centered single columns for a structural feel.
-- **Baseline rhythm:** vertical spacing on an **8px** scale: `4, 8, 12, 16, 24, 32, 48, 64, 96, 128`.
-- **Section padding:** `96px` top/bottom desktop, `56px` mobile. Be consistent — uneven section padding is the most common Lovable tell.
-- **Alignment:** left-aligned by default. Center only short standalone statements, never paragraphs.
+### Botões
 
----
+```css
+/* Primário */
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 2px solid transparent;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-primary:hover { background: #063a5e; }
+.btn-primary:active { transform: scale(0.98); }
 
-## 7. Borders, elevation, radius
+/* Secundário / outline */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-button);
+  font-weight: 600;
+}
+.btn-secondary:hover { background: var(--color-primary-05); }
 
-### 7.1 Radius
-Tighten from `0.75rem` to **`0.375rem`** (`--radius`). Technical/precise reads with smaller radii. Pills (`9999px`) only for tags/badges; never for cards or primary buttons.
+/* Ghost */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-accent);
+  border: none;
+  padding: 10px 16px;
+  font-size: var(--text-button);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
-### 7.2 Borders
-- **Hairline `1px` borders are the primary separation device,** not shadows. Use `--border` (paper-200 / ink-700).
-- Tick-marked and dotted rules belong to the signature (Section 8); plain hairlines elsewhere.
-
-### 7.3 Elevation
-Minimal. Two levels only:
-
-| Level | Token            | Value                                   | Use                  |
-|-------|------------------|-----------------------------------------|----------------------|
-| 0     | (none)           | border only                             | Default cards        |
-| 1     | `shadow-card`    | `0 1px 2px hsl(192 38% 9% / 0.06), 0 8px 24px -12px hsl(192 38% 9% / 0.12)` | Hover / popovers |
-
-Retire the teal-glow shadows (`--shadow-primary`) for chrome; keep a teal glow only as a deliberate focus/hover accent on interactive data elements.
-
----
-
-## 8. Signature: the measurement grid
-
-The one memorable element. Use it to frame structure; do not scatter it.
-
-- **Field labels:** every major section opens with a mono eyebrow formatted as a coordinate: `// 02 — SOLUÇÕES`. The number is real ordinal position; if the content isn't a sequence, drop the number and keep the slash prefix (`// ÁREA DE ATUAÇÃO`).
-- **Tick rules:** section dividers are hairlines with short vertical ticks at grid-column boundaries (like a plot axis). Subtle: ticks in `--muted-foreground` at ~30% opacity.
-- **Ambient grid:** the hero (and only the hero) carries a faint blueprint grid background — `1px` lines, `teal-500` at 4–6% opacity, ~48px cells. Respects `prefers-reduced-motion` (static).
-- **Metric framing:** key figures sit in a bordered cell with a mono label above, like a readout. This is where teal and signal colors are allowed to be bright.
-
-Rule of restraint: a screen uses **at most two** of these four devices. The grid is a system, not a texture.
-
----
-
-## 9. Components
-
-General: derive from shadcn/ui primitives already installed. Restyle via tokens — don't fork. Below, the rules that matter.
-
-### Buttons
-- **Primary:** solid `teal-500`, white text, radius `0.375rem`, weight 500. Hover → `teal-700`. One primary per view.
-- **Secondary:** `1px` border (`--border`), transparent fill, `foreground` text. Hover → `paper-100` fill.
-- **Ghost / link:** text + mono affordance for technical actions (e.g. `→ ver NIT`).
-- **Do:** name the action. **Don't:** gradient-fill buttons, drop-shadow buttons, or use teal for more than the primary.
+/* Tamanhos */
+.btn-sm { padding: 10px 20px; font-size: 13px; }
+.btn-lg { padding: 18px 36px; font-size: 17px; }
+```
 
 ### Cards
-- Flat: `paper-0` fill, `1px` border, radius `0.375rem`, no shadow at rest.
-- Optional mono label header (field-label style) for typed content (course, solution, NIT).
-- Hover (if interactive): border → `teal-400`, elevation level 1. Subtle, fast.
-- **Don't:** heavy shadows, large radii, full-bleed gradient headers.
 
-### Badges / tags
-- Pill, mono `label` type, `teal-100` fill + `teal-700` text for brand; signal-color variants for status only.
+```css
+/* Card padrão */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
 
-### Inputs & forms
-- `1px` border, `paper-0` fill, radius `0.375rem`. Focus → `teal-400` ring (2px), not a glow.
-- Labels above inputs in `body-sm` weight 500; helper/error text in `body-sm`. Errors use `signal-error` + a directional message.
+/* Card destacado (fundo azul) */
+.card-featured {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+}
 
-### Navigation / header
-- Slim, hairline bottom border, no shadow. Logo left, links in `body-sm` 500, language toggle (PT/EN) as a mono control. Sticky with a `1px` border that intensifies on scroll — no blur-heavy glass.
+/* Card com borda de acento lateral */
+.card-accent {
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: var(--space-6) var(--space-8);
+  background: var(--color-primary-05);
+}
+```
 
-### Data & metrics
-- Figures in `data` (mono, tabular). Metric cells use the signature framing (Section 8). Charts use the signal series order (4.3) and hairline axes.
+### Badges e tags
 
----
+```css
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
 
-## 10. Motion
+.badge-primary  { background: var(--color-primary-10); color: var(--color-primary); }
+.badge-success  { background: rgba(29,122,74,0.10); color: var(--color-success); }
+.badge-outline  { border: 1px solid var(--color-border-strong); color: var(--color-text-secondary); }
+```
 
-- **Purposeful and fast.** Default transition `150–200ms`, `ease-out`. Hover/focus only.
-- **One orchestrated moment:** a hero load sequence (eyebrow → headline → grid fade-in, staggered ~60ms). Nowhere else needs entrance animation.
-- Scroll reveals: at most a single `fade-in` + 8px rise, once per section, not per element.
-- **Always** respect `prefers-reduced-motion: reduce` — disable transforms and the ambient grid animation.
-- Retire scattered `scale-in`/`fade-in` on every card (current default). Less motion reads more precise here.
+### Inputs e formulários
 
----
+```css
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  color: var(--color-text-primary);
+  background: var(--color-white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(4,43,69,0.12);
+  outline: none;
+}
+.input::placeholder { color: var(--color-text-muted); }
 
-## 11. Accessibility floor (non-negotiable)
+.label {
+  display: block;
+  font-size: var(--text-body-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+```
 
-- Text contrast ≥ 4.5:1 (≥ 3:1 for large display). Verify teal-on-paper and ink-on-dark.
-- Visible keyboard focus everywhere (the `teal-400` ring).
-- Full responsive down to 360px; PT strings must not clip.
-- Hit targets ≥ 44px. Don't convey state by color alone — pair signal colors with a label or icon.
+### Eyebrow / tag de seção
 
----
+```css
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+```
 
-## 12. Implementation roadmap (after this doc)
+### Divider decorativo
 
-1. **Fonts:** add Space Grotesk + IBM Plex Sans + IBM Plex Mono (self-hosted or Google Fonts), wire `fontFamily` in `tailwind.config.ts`.
-2. **Tokens:** replace `:root` / `.dark` in `src/index.css` with Section 4.4; add the type scale and 8px spacing to the Tailwind theme.
-3. **Primitives:** restyle shadcn `button`, `card`, `badge`, `input` to the rules in Section 9.
-4. **Extract components:** pull `Header`, `Footer`, `Section`, `FieldLabel`, `MetricCell` out of the monolithic pages.
-5. **Signature:** build the measurement-grid eyebrow + tick-rule + hero grid as reusable components.
-6. **Showcase page:** a `/style` route rendering every token and component — this becomes the visual contract and the thing you screenshot into Claude.
+```css
+.divider-accent {
+  width: 64px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  margin: var(--space-4) 0 var(--space-6);
+}
+```
 
----
+-----
 
-*Change log*
-- v0.1 — initial specification, technical research-lab direction. Teal anchor retained from the original Lovable build; everything else rebuilt.
+## 9. ELEMENTOS DECORATIVOS
+
+### Círculos de fundo (mantidos do design social)
+
+```css
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 40px solid var(--color-primary-05);
+  pointer-events: none;
+  z-index: 0;
+}
+```
+
+### Padrão de grade sutil
+
+```css
+.bg-grid {
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.4;
+}
+```
+
+### Gradiente hero
+
+```css
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #063a5e 60%, #0a4a78 100%);
+}
+```
+
+-----
+
+## 10. NAVEGAÇÃO
+
+```css
+/* Navbar */
+.navbar {
+  height: 72px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+/* Link de nav */
+.nav-link {
+  font-size: var(--text-body-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
+}
+.nav-link:hover  { color: var(--color-primary); background: var(--color-primary-05); }
+.nav-link.active { color: var(--color-primary); font-weight: 700; }
+```
+
+-----
+
+## 11. ESTRUTURA DE PÁGINA (wireframe)
+
+```
+┌─────────────────────────────────────┐
+│ NAVBAR — logo · links · CTA         │  height: 72px · sticky
+├─────────────────────────────────────┤
+│                                     │
+│           HERO                      │  fundo: #042b45
+│   eyebrow · título · subtexto       │  padding: 128px 0
+│   CTA primário + secundário         │
+│                                     │
+├─────────────────────────────────────┤
+│                                     │
+│         SOBRE / MISSÃO              │  fundo: #ffffff
+│   texto + elemento visual           │  padding: 96px 0
+│                                     │
+├─────────────────────────────────────┤
+│                                     │
+│        SERVIÇOS / O QUE FAZEMOS     │  fundo: #f4f7fa
+│   grid de 3 cards                   │  padding: 96px 0
+│                                     │
+├─────────────────────────────────────┤
+│                                     │
+│          NÚMEROS / IMPACTO          │  fundo: #042b45
+│   4 stats em destaque               │  padding: 80px 0
+│                                     │
+├─────────────────────────────────────┤
+│                                     │
+│           PROJETOS                  │  fundo: #ffffff
+│   grid de cards com tags            │  padding: 96px 0
+│                                     │
+├─────────────────────────────────────┤
+│                                     │
+│        PARCEIROS / SETOR            │  fundo: #f4f7fa
+│   logos em linha                    │  padding: 64px 0
+│                                     │
+├─────────────────────────────────────┤
+│                                     │
+│            CONTATO / CTA            │  fundo: #042b45
+│   título · formulário ou botão      │  padding: 96px 0
+│                                     │
+├─────────────────────────────────────┤
+│ FOOTER — logo · links · copyright   │  fundo: #021d2e
+└─────────────────────────────────────┘
+```
+
+-----
+
+## 12. ALTERNÂNCIA DE SEÇÕES
+
+Padrão de alternância de fundos para ritmo visual:
+
+|Seção    |Fundo                       |
+|---------|----------------------------|
+|Hero     |`#042b45` (azul escuro)     |
+|Sobre    |`#ffffff` (branco)          |
+|Serviços |`#f4f7fa` (cinza claro)     |
+|Números  |`#042b45` (azul escuro)     |
+|Projetos |`#ffffff` (branco)          |
+|Parceiros|`#f4f7fa` (cinza claro)     |
+|CTA final|`#042b45` (azul escuro)     |
+|Footer   |`#021d2e` (azul mais escuro)|
+
+-----
+
+## 13. MOTION / ANIMAÇÕES
+
+```css
+/* Transições padrão */
+--transition-fast:   0.15s ease;
+--transition-normal: 0.25s ease;
+--transition-slow:   0.4s ease;
+
+/* Scroll reveal — usar com IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respeitar preferência do usuário */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+-----
+
+## 14. ACESSIBILIDADE
+
+```css
+/* Focus visível */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--color-primary);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  font-weight: 700;
+  z-index: 9999;
+}
+.skip-link:focus { top: 0; }
+```
+
+**Contraste mínimo (WCAG AA):**
+
+- Texto normal: mínimo 4.5:1
+- Texto grande (+18px): mínimo 3:1
+- `#042b45` sobre `#ffffff` → **12.6:1** ✅
+- `#ffffff` sobre `#042b45` → **12.6:1** ✅
+- `#3a5568` sobre `#ffffff` → **7.2:1** ✅
+
+-----
+
+## 15. FAVICON E META
+
+```html
+<!-- Cor da barra do navegador mobile -->
+<meta name="theme-color" content="#042b45">
+
+<!-- Open Graph -->
+<meta property="og:image" content="/og-image.png"> <!-- 1200×630px -->
+```
+
+**Imagem OG:** fundo `#042b45`, logo centralizado, slogan em Bebas Neue.
+
+-----
+
+## 16. BOAS PRÁTICAS WEB
+
+- **Nunca usar mais de 2 fontes** por página
+- **Imagens** sempre com `alt` descritivo
+- **Botões** sempre com texto — nunca só ícone sem label
+- **Links** devem indicar destino — evitar “clique aqui”
+- **Formulários** sempre com `label` associado ao `input`
+- **Seções de fundo escuro** — verificar contraste de todos os elementos
+- **Logos de parceiros** em escala de cinza para uniformidade visual
+- **Dados com fonte** — sempre citar abaixo do número
+- **Mobile-first** — começar o CSS pelo menor breakpoint
+
+-----
+
+*Design System Web — Instituto Curvelo · Junho de 2026*

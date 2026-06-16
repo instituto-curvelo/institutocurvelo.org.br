@@ -10,7 +10,7 @@ import { Container } from "@/components/section";
 export function Footer() {
   const { t } = useLanguage();
   return (
-    <footer className="mt-auto border-t border-border bg-ink-900 text-paper-50">
+    <footer className="mt-auto bg-ink-950 text-paper-50">
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
@@ -23,14 +23,14 @@ export function Footer() {
               className="h-11 w-auto brightness-0 invert"
             />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-300">
-              {site.name} — {t(site.tagline)}
+              {site.name} · {t(site.tagline)}
             </p>
-            <p className="mt-3 font-mono text-xs text-ink-300">{site.cnpj}</p>
+            <p className="mt-3 text-xs text-ink-300">{site.cnpj}</p>
           </div>
 
           <div>
             <div className="field-label mb-4 text-ink-300">
-              <span className="text-teal-300">//</span> {t({ pt: "Navegação", en: "Navigation" })}
+              {t({ pt: "Navegação", en: "Navigation" })}
             </div>
             <ul className="space-y-2.5">
               {navItems.map((item) => (
@@ -48,7 +48,7 @@ export function Footer() {
 
           <div>
             <div className="field-label mb-4 text-ink-300">
-              <span className="text-teal-300">//</span> {t({ pt: "Contato", en: "Contact" })}
+              {t({ pt: "Contato", en: "Contact" })}
             </div>
             <ul className="space-y-3 text-sm text-ink-300">
               <li className="flex items-start gap-2.5">
