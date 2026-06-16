@@ -32,12 +32,13 @@ export function Header() {
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center" aria-label="Instituto Curvelo">
           <Image
-            src="/brand/logo-wordmark.png"
+            src="/brand/logo-horizontal-light.svg"
             alt="Instituto Curvelo"
-            width={150}
-            height={36}
+            width={130}
+            height={48}
             priority
-            className="h-8 w-auto"
+            unoptimized
+            className="h-9 w-auto"
           />
         </Link>
 

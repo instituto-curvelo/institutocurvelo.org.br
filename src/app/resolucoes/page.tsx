@@ -82,7 +82,7 @@ export default function ResolutionsPage() {
                         <Calendar className="size-4 shrink-0 text-teal-500" />
                         <span className="field-label">Data:</span>
                         <span className="font-mono tnum text-foreground">
-                          01/01/2025
+                          10/09/2025
                         </span>
                       </span>
                     </div>

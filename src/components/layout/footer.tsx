@@ -15,11 +15,12 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Image
-              src="/brand/logo-wordmark.png"
+              src="/brand/logo-horizontal-light.svg"
               alt="Instituto Curvelo"
-              width={170}
-              height={40}
-              className="h-9 w-auto brightness-0 invert"
+              width={150}
+              height={56}
+              unoptimized
+              className="h-11 w-auto brightness-0 invert"
             />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink-300">
               {site.name} — {t(site.tagline)}

@@ -557,7 +557,7 @@ One accordion unit. Unit name (not language-switched): `NIT - Núcleo de Inovaç
 
 | Document | Date | Type | File |
 |---|---|---|---|
-| `Resolução NIT nº 001/2025 - Política de Inovação` | `2025-01-01` (displayed as `Data: 01/01/2025`, formatted pt-BR) | `Resolução` (badge) | `/NIT_001_2025.pdf` (opens in new tab) |
+| `Resolução NIT nº 001/2025 - Política de Inovação` | `2025-09-10` (displayed as `Data: 10/09/2025`, formatted pt-BR) | `Resolução` (badge) | `/NIT_001_2025.pdf` (opens in new tab) |
 
 Static labels: `Data:` prefix (not switched), `Download` button label (not switched).
 
@@ -1009,7 +1009,7 @@ Maintaining organization mentioned in About copy: **Grupo GA230 / GA230 Group**.
 
 | Unit | Document | Date | Type | File |
 |---|---|---|---|---|
-| NIT - Núcleo de Inovação Tecnológica | Resolução NIT nº 001/2025 - Política de Inovação | 2025-01-01 | Resolução | `/NIT_001_2025.pdf` |
+| NIT - Núcleo de Inovação Tecnológica | Resolução NIT nº 001/2025 - Política de Inovação | 2025-09-10 | Resolução | `/NIT_001_2025.pdf` |
 
 ### 10.6 Team / board members
 
