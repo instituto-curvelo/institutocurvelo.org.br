@@ -215,6 +215,30 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* ---------- By the numbers ---------- */}
+      <Section className="bg-ink-900 text-white">
+        <Container>
+          <span className="field-label !text-accent-soft">
+            {t({ pt: "Em números", en: "By the numbers" })}
+          </span>
+          <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 md:grid-cols-4">
+            {[
+              { n: "03", k: { pt: "Áreas de atuação", en: "Areas of expertise" } },
+              { n: "02", k: { pt: "Cursos técnicos", en: "Technical courses" } },
+              { n: "03", k: { pt: "Laboratórios", en: "Laboratories" } },
+              { n: "04", k: { pt: "Parceiros", en: "Partners" } },
+            ].map((s) => (
+              <div key={s.k.pt} className="bg-[#063a5e] p-7">
+                <div className="font-display text-6xl leading-none tnum text-white">
+                  {s.n}
+                </div>
+                <div className="mt-3 text-sm font-medium text-white/70">{t(s.k)}</div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
       {/* ---------- Course highlight ---------- */}
       <Section>
         <Container>
