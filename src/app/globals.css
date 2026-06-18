@@ -241,6 +241,105 @@
 .skip-link:focus { top: 0; }
 
 /* ============================================================
+   Animated hero logo (dark variant — adapted from animated.html)
+   ============================================================ */
+.clogo {
+  display: inline-block;
+  line-height: 0;
+}
+/* Fade-out only animates when the cycle flags it; reset snaps back instantly. */
+.clogo[data-fading="true"] {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.clogo-mark {
+  width: clamp(170px, 24vmin, 260px);
+  height: auto;
+  overflow: visible;
+  --slate: #ffffff;                /* slate arc inverts to white on navy */
+  --teal: var(--color-mark-teal, #289db9);
+  --clogo-speed: 0.75;             /* global motion multiplier (<1 = slower) */
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: clogo-breathe calc(15s / var(--clogo-speed)) ease-in-out infinite;
+}
+
+/* deco coordinate rings */
+.clogo-deco { transform-box: view-box; transform-origin: 192px 192px; }
+.clogo-deco circle { fill: none; stroke: rgba(255, 255, 255, 0.12); }
+.clogo-ring { stroke-width: 1; stroke-dasharray: 2 7; }
+.clogo-ringInner { stroke-width: 1; stroke-dasharray: 1 13; opacity: 0.7; }
+.clogo-spin {
+  transform-box: view-box; transform-origin: 192px 192px;
+  animation: clogo-spin calc(64s / var(--clogo-speed)) linear infinite;
+}
+.clogo-spin.rev { animation: clogo-spinRev calc(99s / var(--clogo-speed)) linear infinite; }
+
+.clogo-orbit { transform-box: view-box; transform-origin: 192px 192px; }
+.clogo-enter { transform-box: view-box; transform-origin: 192px 192px; }
+.clogo-arc-slate path { fill: var(--slate); }
+.clogo-arc-teal path { fill: var(--teal); }
+.clogo-word-main { fill: var(--slate); }
+.clogo-word-sub { fill: var(--teal); }
+.clogo-letters { transform-box: view-box; transform-origin: 192px 192px; }
+
+/* continuous loop sway */
+.clogo-o1 { animation: clogo-sway calc(9s / var(--clogo-speed)) ease-in-out infinite; }
+.clogo-o2 { animation: clogo-sway calc(10.6s / var(--clogo-speed)) ease-in-out infinite reverse; animation-delay: -1.4s; }
+.clogo-o3 { animation: clogo-swayBig calc(7.4s / var(--clogo-speed)) ease-in-out infinite; animation-delay: -0.6s; }
+
+/* one-shot assemble (re-runs each cycle via key remount) */
+.clogo-mark.playing .clogo-e1 { animation: clogo-enter1 calc(1.25s / var(--clogo-speed)) cubic-bezier(.2,.7,.2,1) both; }
+.clogo-mark.playing .clogo-e2 { animation: clogo-enter2 calc(1.32s / var(--clogo-speed)) cubic-bezier(.2,.7,.2,1) both; }
+.clogo-mark.playing .clogo-e3 { animation: clogo-enter3 calc(1.12s / var(--clogo-speed)) cubic-bezier(.2,.75,.25,1) calc(.18s / var(--clogo-speed)) both; }
+.clogo-mark.playing .clogo-letters { animation: clogo-lettersIn calc(1.5s / var(--clogo-speed)) cubic-bezier(.2,.7,.2,1) calc(.7s / var(--clogo-speed)) both; }
+
+@keyframes clogo-enter1 {
+  0% { transform: rotate(-104deg) scale(.6); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: rotate(0) scale(1); opacity: 1; }
+}
+@keyframes clogo-enter2 {
+  0% { transform: rotate(118deg) scale(.55); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: rotate(0) scale(1); opacity: 1; }
+}
+@keyframes clogo-enter3 {
+  0% { transform: rotate(64deg) scale(.4); opacity: 0; }
+  100% { transform: rotate(0) scale(1); opacity: 1; }
+}
+@keyframes clogo-lettersIn {
+  0% { opacity: 0; transform: translateY(8px) scale(.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes clogo-sway {
+  0% { transform: rotate(-2.4deg); }
+  50% { transform: rotate(2.4deg); }
+  100% { transform: rotate(-2.4deg); }
+}
+@keyframes clogo-swayBig {
+  0% { transform: rotate(3.84deg); }
+  50% { transform: rotate(-3.84deg); }
+  100% { transform: rotate(3.84deg); }
+}
+@keyframes clogo-breathe {
+  0%, 100% { transform: scale(.988); }
+  50% { transform: scale(1.012); }
+}
+@keyframes clogo-spin { to { transform: rotate(360deg); } }
+@keyframes clogo-spinRev { to { transform: rotate(-360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .clogo[data-fading="true"] { opacity: 1; transition: none; }
+  .clogo-mark, .clogo-o1, .clogo-o2, .clogo-o3, .clogo-spin { animation: none !important; }
+  .clogo-mark.playing .clogo-e1,
+  .clogo-mark.playing .clogo-e2,
+  .clogo-mark.playing .clogo-e3,
+  .clogo-mark.playing .clogo-letters { animation: none !important; }
+}
+
+/* ============================================================
    Motion
    ============================================================ */
 @keyframes ds-rise {

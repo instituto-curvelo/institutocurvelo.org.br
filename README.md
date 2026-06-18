@@ -3,8 +3,8 @@
 Website of **Instituto Curvelo**, a Science, Technology and Innovation Institution (ICT).
 Next.js 16 (App Router) + Tailwind v4, bilingual PT/EN, built to a custom design system.
 
-> The previous Hugo static site is preserved on the `main` branch and the `legacy-hugo-static` tag.
-> This Next.js rebuild lives on the `nextjs` branch.
+> This Next.js rebuild lives on the `nextjs` branch (deployed by Vercel).
+> The previous Hugo static site is preserved on the `legacy` branch.
 
 ## Design system
 

@@ -26,6 +26,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
+import { AnimatedLogo } from "@/components/animated-logo";
 
 const expertise = [
   {
@@ -58,50 +59,51 @@ export default function HomePage() {
         <div className="grid-on-dark absolute inset-0" aria-hidden />
         <div className="deco-circle -right-40 -top-40 size-[420px]" aria-hidden />
         <Container className="relative py-28 md:py-36">
-          <div className="max-w-3xl">
-            <span className="field-label animate-rise !text-accent-soft">
-              Instituto Curvelo
-            </span>
-            <h1 className="mt-5 font-display text-6xl leading-none animate-rise md:text-8xl">
-              {t({ pt: "Tecnologia", en: "Technology" })}{" "}
-              <span className="text-accent-soft">
-                {t({ pt: "que inspira", en: "that inspires" })}
-              </span>
-            </h1>
-            <p
-              className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80 animate-rise md:text-xl"
-              style={{ animationDelay: "60ms" }}
-            >
-              {t({
-                pt: "Oferecemos soluções tecnológicas e científicas avançadas, com foco em pesquisa, desenvolvimento e inovação em diversos setores.",
-                en: "We offer advanced technological and scientific solutions, focusing on research, development, and innovation in various sectors.",
-              })}
-            </p>
-            <div
-              className="mt-9 flex flex-wrap gap-3 animate-rise"
-              style={{ animationDelay: "120ms" }}
-            >
-              <Button
-                asChild
-                size="lg"
-                className="border-transparent bg-white text-primary hover:bg-white/90"
+          <div className="flex flex-col items-start gap-12 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-3xl">
+              <h1 className="font-display text-6xl leading-none animate-rise md:text-8xl">
+                {t({ pt: "Tecnologia", en: "Technology" })}{" "}
+                <span className="text-accent-soft">
+                  {t({ pt: "que inspira", en: "that inspires" })}
+                </span>
+              </h1>
+              <p
+                className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80 animate-rise md:text-xl"
+                style={{ animationDelay: "60ms" }}
               >
-                <Link href={routes.solutions}>
-                  {t({ pt: "Explore nossas soluções", en: "Explore our solutions" })}
-                  <ArrowRight />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="secondary"
-                size="lg"
-                className="border-white text-white hover:bg-white/10"
+                {t({
+                  pt: "Oferecemos soluções tecnológicas e científicas avançadas, com foco em pesquisa, desenvolvimento e inovação em diversos setores.",
+                  en: "We offer advanced technological and scientific solutions, focusing on research, development, and innovation in various sectors.",
+                })}
+              </p>
+              <div
+                className="mt-9 flex flex-wrap gap-3 animate-rise"
+                style={{ animationDelay: "120ms" }}
               >
-                <Link href={routes.courses}>
-                  {t({ pt: "Ver cursos", en: "View courses" })}
-                </Link>
-              </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  className="border-transparent bg-white text-primary hover:bg-white/90"
+                >
+                  <Link href={routes.solutions}>
+                    {t({ pt: "Explore nossas soluções", en: "Explore our solutions" })}
+                    <ArrowRight />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="secondary"
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10"
+                >
+                  <Link href={routes.courses}>
+                    {t({ pt: "Ver cursos", en: "View courses" })}
+                  </Link>
+                </Button>
+              </div>
             </div>
+
+            <AnimatedLogo className="shrink-0 self-center" />
           </div>
 
           {/* coordinate readout strip */}
