@@ -605,6 +605,19 @@ Padrão de alternância de fundos para ritmo visual:
 
 **Imagem OG:** fundo `#042b45`, logo centralizado, slogan em Bebas Neue.
 
+**Favicon:** gerado a partir de `public/brand/logo-vertical-light.svg` (logo quadrado).
+Os arquivos ficam em `src/app/` e usam a convenção de arquivos do Next.js, que emite
+as tags `<link rel="icon">` automaticamente:
+
+| Arquivo | Formato | Uso |
+| --- | --- | --- |
+| `src/app/icon.svg` | SVG | navegadores modernos, nítido em qualquer escala |
+| `src/app/favicon.ico` | ICO 16/32/48px | requisição padrão de `/favicon.ico`, navegadores antigos |
+| `src/app/apple-icon.png` | PNG 180×180px | iOS; fundo branco, pois o iOS renderiza transparência como preto |
+
+Não declarar `icons` em `metadata` (`layout.tsx`): a convenção de arquivos já cobre
+o caso, e as duas fontes juntas emitem tags duplicadas e conflitantes.
+
 -----
 
 ## 16. BOAS PRÁTICAS WEB

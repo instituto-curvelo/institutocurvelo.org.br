@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   },
   description:
     "Instituição de Ciência, Tecnologia e Inovação dedicada a pesquisa aplicada, automação, IoT e inteligência de dados.",
-  icons: { icon: "/brand/favicon.png" },
   openGraph: {
     type: "website",
     siteName: "Instituto Curvelo",
