@@ -54,9 +54,18 @@ export const routes = {
   llmCourse: "/curso/llms-corporativos",
 };
 
-export const partners: { name: string; logo: string }[] = [
-  { name: "iRede", logo: "/partners/irede.png" },
-  { name: "Lactec", logo: "/partners/lactec.png" },
-  { name: "ICMC-USP", logo: "/partners/icmc-usp.png" },
-  { name: "PIT", logo: "/partners/pit-logo.png" },
+// `surface` is the tile background the logo sits on. Partners supply their logo
+// either as a white reverse version (needs "dark") or in full color (needs
+// "light"). Check a new logo against both before choosing.
+export const partners: {
+  name: string;
+  logo: string;
+  surface: "dark" | "light";
+}[] = [
+  { name: "iRede", logo: "/partners/irede.png", surface: "dark" },
+  { name: "Lactec", logo: "/partners/lactec.png", surface: "dark" },
+  { name: "ICMC-USP", logo: "/partners/icmc-usp.png", surface: "dark" },
+  { name: "PIT", logo: "/partners/pit-logo.png", surface: "light" },
+  { name: "NUTES", logo: "/partners/nutes.png", surface: "light" },
+  { name: "ABINC", logo: "/partners/abinc.png", surface: "light" },
 ];

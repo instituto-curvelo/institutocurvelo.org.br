@@ -27,6 +27,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
 import { AnimatedLogo } from "@/components/animated-logo";
+import { cn } from "@/lib/utils";
 
 const expertise = [
   {
@@ -321,11 +322,14 @@ export default function HomePage() {
               en: "We work in collaboration with leading organizations to expand our impact and offer even more robust solutions.",
             })}
           />
-          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 md:grid-cols-4">
+          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 md:grid-cols-3">
             {partners.map((p) => (
               <div
                 key={p.name}
-                className="flex h-28 items-center justify-center bg-[#063a5e] p-6"
+                className={cn(
+                  "flex h-28 items-center justify-center p-6",
+                  p.surface === "light" ? "bg-white" : "bg-[#063a5e]",
+                )}
               >
                 <Image
                   src={p.logo}
