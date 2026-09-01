@@ -26,6 +26,19 @@ export function Footer() {
               {site.name} · {t(site.tagline)}
             </p>
             <p className="mt-3 text-xs text-ink-300">{site.cnpj}</p>
+            {/* The seal has no reverse version, so it sits on a white chip. */}
+            <div className="mt-5 inline-flex rounded bg-white px-2.5 py-2">
+              <Image
+                src="/seals/abinc-associado.png"
+                alt={t({
+                  pt: "Instituto Curvelo, associado da ABINC",
+                  en: "Instituto Curvelo, ABINC associate member",
+                })}
+                width={400}
+                height={198}
+                className="h-8 w-auto"
+              />
+            </div>
           </div>
 
           <div>

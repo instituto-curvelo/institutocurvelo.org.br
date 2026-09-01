@@ -164,6 +164,7 @@ Most pages share the same footer (Index, Institute, Solutions, Resolutions, Cour
 - Logo image `/lovable-uploads/4fad8fed-201d-4f1e-bb27-c27be38495dd.png` (alt `Instituto Curvelo Logo`)
 - Tagline: PT `Instituto Curvelo - Instituição de Ciência, Tecnologia e Inovação` | EN `Instituto Curvelo - Science, Technology, and Innovation Institution`
 - `CNPJ 60.911.337/0001-82`
+- ABINC associate seal `/seals/abinc-associado.png` (alt PT `Instituto Curvelo, associado da ABINC` | EN `Instituto Curvelo, ABINC associate member`)
 
 The **Data Science** page has an expanded footer (see Section 7) with a Contact column and a "Lei do Bem" column. The **LLM course** page footer is the simple logo + tagline + CNPJ variant.
 
