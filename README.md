@@ -43,7 +43,7 @@ No extra configuration is needed — Next.js is detected automatically.
 
 ```
 src/
-  app/                  routes (/, /instituto, /solucoes, /cursos, /resolucoes, /curso/*)
+  app/                  routes (/, /instituto, /solucoes, /resolucoes)
     api/contact/        Resend email route handler
   components/
     layout/             header, footer, language toggle

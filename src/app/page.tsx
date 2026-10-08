@@ -23,7 +23,6 @@ import {
   TickRule,
 } from "@/components/section";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
 import { AnimatedLogo } from "@/components/animated-logo";
@@ -89,16 +88,6 @@ export default function HomePage() {
                   <Link href={routes.solutions}>
                     {t({ pt: "Explore nossas soluções", en: "Explore our solutions" })}
                     <ArrowRight />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="secondary"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10"
-                >
-                  <Link href={routes.courses}>
-                    {t({ pt: "Ver cursos", en: "View courses" })}
                   </Link>
                 </Button>
               </div>
@@ -224,10 +213,9 @@ export default function HomePage() {
           <span className="field-label !text-accent-soft">
             {t({ pt: "Em números", en: "By the numbers" })}
           </span>
-          <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 md:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 md:grid-cols-3">
             {[
               { n: "03", k: { pt: "Áreas de atuação", en: "Areas of expertise" } },
-              { n: "02", k: { pt: "Cursos técnicos", en: "Technical courses" } },
               { n: "03", k: { pt: "Laboratórios", en: "Laboratories" } },
               { n: "04", k: { pt: "Parceiros", en: "Partners" } },
             ].map((s) => (
@@ -242,76 +230,8 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* ---------- Course highlight ---------- */}
-      <Section>
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.8fr]">
-            <div>
-              <Badge>{t({ pt: "Curso", en: "Course" })}</Badge>
-              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-                {t({ pt: "Introdução à Ciência de Dados", en: "Introduction to Data Science" })}
-              </h2>
-              <p className="mt-3 text-lg text-muted-foreground">
-                {t({
-                  pt: "Aprenda os fundamentos da ciência de dados em 12 semanas de capacitação intensiva com o Prof. Dr. Filipe Verri.",
-                  en: "Learn data science fundamentals in 12 weeks of intensive training with Prof. Dr. Filipe Verri.",
-                })}
-              </p>
-              <div className="mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-4">
-                {[
-                  { k: { pt: "Carga", en: "Hours" }, v: "36h" },
-                  { k: { pt: "Formato", en: "Format" }, v: t({ pt: "Virtual", en: "Virtual" }) },
-                  { k: { pt: "Vagas", en: "Spots" }, v: "30" },
-                  { k: { pt: "Certificado", en: "Certificate" }, v: t({ pt: "Incluso", en: "Included" }) },
-                ].map((m, i) => (
-                  <div key={i} className="bg-card p-4">
-                    <div className="field-label mb-1">{t(m.k)}</div>
-                    <div className="font-display text-base font-semibold tnum">{m.v}</div>
-                  </div>
-                ))}
-              </div>
-              <Button asChild className="mt-7">
-                <Link href={routes.dataScience}>
-                  {t({ pt: "Saiba mais", en: "Learn more" })}
-                  <ArrowRight />
-                </Link>
-              </Button>
-            </div>
-
-            <Card className="overflow-hidden">
-              <div className="flex items-center gap-4 border-b border-border p-5">
-                <Image
-                  src="/people/filipe-verri-home.png"
-                  alt="Prof. Dr. Filipe Verri"
-                  width={64}
-                  height={64}
-                  className="size-16 rounded-md border border-border object-cover"
-                />
-                <div>
-                  <p className="font-display font-semibold">Prof. Dr. Filipe Verri</p>
-                  <p className="text-sm text-muted-foreground">
-                    {t({ pt: "Professor do ITA e Unifesp", en: "Professor at ITA and Unifesp" })}
-                  </p>
-                </div>
-              </div>
-              <ul className="space-y-3 p-5 text-sm">
-                {[
-                  { pt: "Doutor em Ciências de Computação (USP)", en: "PhD in Computer Science (USP)" },
-                  { pt: 'Autor do livro "Data Science Project"', en: 'Author of the book "Data Science Project"' },
-                ].map((c, i) => (
-                  <li key={i} className="flex items-start gap-2.5">
-                    <Check className="mt-0.5 size-4 shrink-0 text-teal-500" />
-                    <span className="text-muted-foreground">{t(c)}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          </div>
-        </Container>
-      </Section>
-
       {/* ---------- Partners ---------- */}
-      <Section className="bg-ink-900 text-white">
+      <Section className="border-t border-white/10 bg-ink-900 text-white">
         <Container>
           <SectionHeading
             tone="dark"

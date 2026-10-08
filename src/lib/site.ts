@@ -22,24 +22,10 @@ export const contact = {
   address: "Av. Marília, 1000, Galpão 27, Arujá, SP 07429-825",
 };
 
-/** Course / commercial contact. */
-export const courseContact = {
-  email: "contato@institutocurvelo.org.br",
-  phone: "+55 12 99723-9684",
-  phoneHref: "tel:+5512997239684",
-  whatsapp: "5512997239684",
-  city: { pt: "São José dos Campos, SP - Brasil", en: "São José dos Campos, SP - Brazil" } satisfies Localized,
-};
-
-export function whatsappUrl(message: string) {
-  return `https://wa.me/${courseContact.whatsapp}?text=${encodeURIComponent(message)}`;
-}
-
 /** Primary navigation. Anchor links point at home-page sections. */
 export const navItems: { label: Localized; href: string }[] = [
   { label: { pt: "O Instituto", en: "The Institute" }, href: "/instituto" },
   { label: { pt: "Soluções", en: "Solutions" }, href: "/solucoes" },
-  { label: { pt: "Cursos", en: "Courses" }, href: "/cursos" },
   { label: { pt: "Resoluções", en: "Resolutions" }, href: "/resolucoes" },
   { label: { pt: "Contato", en: "Contact" }, href: "/#contato" },
 ];
@@ -48,10 +34,7 @@ export const routes = {
   home: "/",
   institute: "/instituto",
   solutions: "/solucoes",
-  courses: "/cursos",
   resolutions: "/resolucoes",
-  dataScience: "/curso/ciencia-de-dados",
-  llmCourse: "/curso/llms-corporativos",
 };
 
 // `surface` is the tile background the logo sits on. Partners supply their logo

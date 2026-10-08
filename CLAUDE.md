@@ -27,10 +27,10 @@ There is no test suite. Verify changes via `pnpm build` (catches type errors) an
 - **Consequence:** because `t()` is client-only, **every page and content component is a Client Component** (`"use client"` at the top). New pages that render localized copy must also be client components. Keep canonical copy mirrored in `CONTENT_INVENTORY.md`.
 
 ### Routing (`src/app`)
-App Router pages: `/` (`page.tsx`), `/instituto`, `/solucoes`, `/cursos`, `/resolucoes`, and course detail pages under `/curso/*`. The only server-side code is `src/app/api/contact/route.ts` (a POST route handler) and `src/app/opengraph-image.tsx`.
+App Router pages: `/` (`page.tsx`), `/instituto`, `/solucoes`, `/resolucoes`. The course pages (`/cursos`, `/curso/*`) were removed; `next.config.ts` redirects those URLs to `/`. The only server-side code is `src/app/api/contact/route.ts` (a POST route handler) and `src/app/opengraph-image.tsx`.
 
 ### Shared site data (`src/lib/site.ts`)
-Single source of truth for institutional identity (name, CNPJ), `contact` (HQ) vs `courseContact` (commercial/WhatsApp), `navItems`, `routes`, and `partners`. Add/route links through here rather than hardcoding.
+Single source of truth for institutional identity (name, CNPJ), `contact` (HQ), `navItems`, `routes`, and `partners`. Add/route links through here rather than hardcoding.
 
 ### Design system (`src/app/globals.css` + `DESIGN_SYSTEM.md`)
 - Identity is "Azul Curvelo" (deep institutional blue). `DESIGN_SYSTEM.md` is the documented source of truth; `globals.css` holds the implementation.
