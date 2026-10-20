@@ -22,6 +22,13 @@ export const contact = {
   address: "Av. Marília, 1000, Galpão 27, Arujá, SP 07429-825",
 };
 
+export const social = {
+  instagram: {
+    handle: "@institutocurvelo_",
+    url: "https://www.instagram.com/institutocurvelo_/",
+  },
+};
+
 /** Primary navigation. Anchor links point at home-page sections. */
 export const navItems: { label: Localized; href: string }[] = [
   { label: { pt: "O Instituto", en: "The Institute" }, href: "/instituto" },

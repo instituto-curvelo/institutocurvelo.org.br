@@ -14,7 +14,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
-import { contact, partners, routes } from "@/lib/site";
+import { contact, partners, routes, social } from "@/lib/site";
 import {
   Container,
   Section,
@@ -26,6 +26,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
 import { AnimatedLogo } from "@/components/animated-logo";
+import { InstagramIcon } from "@/components/instagram-icon";
 import { cn } from "@/lib/utils";
 
 const expertise = [
@@ -89,6 +90,17 @@ export default function HomePage() {
                     {t({ pt: "Explore nossas soluções", en: "Explore our solutions" })}
                     <ArrowRight />
                   </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="secondary"
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10"
+                >
+                  <a href={social.instagram.url} target="_blank" rel="noopener noreferrer">
+                    <InstagramIcon />
+                    {t({ pt: "Siga-nos no Instagram", en: "Follow us on Instagram" })}
+                  </a>
                 </Button>
               </div>
             </div>
